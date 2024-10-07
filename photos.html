@@ -45,37 +45,7 @@
     <h1 id="d4lmsText"><a href="index.html">Golden Aleksei Team</a></h1>
     <h2 id="d4lmsText">Photos related to the team</h2>
     <div class="container">
-        <script>
-            const folderPath = "photos/";
-
-            function loadImages() {
-                const imageFolder = new XMLHttpRequest();
-                imageFolder.open("GET", folderPath, true);
-                imageFolder.responseType = "blob";
-
-                imageFolder.onload = function() {
-                    const reader = new FileReader();
-                    reader.readAsDataURL(imageFolder.response);
-
-                    reader.onload = function() {
-                        const images = reader.result.match(/<img src="([^"]+)">/g);
-
-                        if (images) {
-                            images.forEach(image => {
-                                const img = document.createElement("img");
-                                img.src = image.match(/<img src="([^"]+)">/)[1];
-                                img.className = "round animatedImg";
-                                document.body.appendChild(img);
-                            });
-                        }
-                    };
-                };
-
-                imageFolder.send();
-            }
-
-            loadImages();    
-        </script>
+        <script src="LoadPhotos.js"></script>
     </div>
     <h1 id="d4lmsText">Links</h1>
     <div class="container">
