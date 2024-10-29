@@ -23,7 +23,7 @@ h2 {
   
   
   /* Apply your text styling */
-  #d4lmsText {
+  .d4lmsText {
     transition: transform 0.3s ease-in-out;
   }
   
@@ -40,14 +40,14 @@ h2 {
   
   }
   
-  #d4lmsText:hover {
+  .d4lmsText:hover {
     transform: scale(1.2); /* Zoom in by 20% */
   }
   
   /* ... Previous CSS rules ... */
   
   /* Apply your text styling */
-  #d4lmsText {
+  .d4lmsText {
     text-align: center;
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
@@ -63,7 +63,7 @@ h2 {
   }
   
   
-  #d4lmsText::before {
+  .d4lmsText::before {
     /* ... Previous ::before rules ... */
     transform-origin: bottom left;
     transform: scaleX(0);
@@ -71,7 +71,7 @@ h2 {
     transition: transform 0.3s ease;
   }
   
-  #d4lmsText:hover::before {
+  .d4lmsText:hover::before {
     transform: scaleX(1);
   }
   
