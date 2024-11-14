@@ -1,155 +1,398 @@
-/* Reset some default styles */
-html, body{
+/* 
+ * Golden Aleksei Team Website Stylesheet
+ * 
+ * This stylesheet provides a modern, responsive design for the Golden Aleksei Team website.
+ * It includes custom styling, animations, and responsive layout techniques.
+ * 
+ * Key Features:
+ * - Brown gradient background
+ * - Responsive design
+ * - Animated hover effects
+ * - Flexible typography
+ * 
+ * Maintained by: Golden Aleksei Team
+ * Last Updated: 2024
+ */
+
+/* CSS Reset and Global Defaults */
+* {
     margin: 0;
     padding: 0;
-    resize: none;
+    box-sizing: border-box;
 }
 
-h1{
-    font-size: 80px;
-}
-
-body{
+/* 
+ * Layout Utilities
+ * Ensures content is centered and flexibly displayed
+ */
+body, main, section, .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to bottom, #684935, #a3814f);
+    justify-content: center;
+    text-align: center;
+}
+
+/* 
+ * Root Variables
+ * Define color palette and spacing for consistent design
+ */
+:root {
+    /* Color Palette from Old Style */
+    --gradient-start: #684935;     /* Dark Brown */
+    --gradient-end: #a3814f;       /* Light Brown */
+    --primary-color: #684935;      /* Dark Brown */
+    --secondary-color: #a3814f;    /* Light Brown */
+    --accent-color: #4A4A4A;       /* Dark Gray */
+    --background-color: linear-gradient(to bottom, #684935, #a3814f);
+    --text-color: #FFFFFF;         /* White for contrast */
+
+    /* Typography and Spacing Variables */
+    --main-font: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-base: 16px;
+    --font-size-large: 1.5rem;
+    --font-size-small: 0.875rem;
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+}
+
+/* 
+ * Body Styling
+ * Sets the overall page layout and background
+ */
+body {
+    min-height: 100vh;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--main-font);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 
+ * Main Content Styling
+ * Responsive and consistent main content formatting
+ */
+main {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+}
+
+/* 
+ * Typography Styling
+ * Responsive and consistent text formatting
+ */
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-large);
+    letter-spacing: -2px;
 }
 
 h2 {
-    font-size: 22px;
-  }
-  
-  
-  /* Apply your text styling */
-  .d4lmsText {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  img.animatedImg {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Adjust the spacing */
-  .headingContainer {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center;
-    justify-content: center; /* Center elements vertically */
-  
-  }
-  
-  .d4lmsText:hover {
-    transform: scale(1.2); /* Zoom in by 20% */
-  }
-  
-  /* ... Previous CSS rules ... */
-  
-  /* Apply your text styling */
-  .d4lmsText {
+    font-size: clamp(1.5rem, 3vw, 2rem);
     text-align: center;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    background: -webkit-linear-gradient(#ffac75, #f6ff75);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    overflow: hidden; /* Add this line to hide the overflowing content during animation */
-  }
-  
-  img.animatedImg::before {
-    transform-origin: bottom left;
-  }
-  
-  
-  .d4lmsText::before {
-    /* ... Previous ::before rules ... */
-    transform-origin: bottom left;
-    transform: scaleX(0);
-    z-index: -1;
-    transition: transform 0.3s ease;
-  }
-  
-  .d4lmsText:hover::before {
-    transform: scaleX(1);
-  }
-  
-  /* Add a keyframes animation for initial line height animation */
-  @keyframes initialLineHeight {
-    0% {
-      line-height: 0%;
-      
-    }
-    100% {
-      line-height: 125%;
-    }
-  }
-  
-  @keyframes fontSizeAnimation {
-    0%  {
-      font-size: 0%;
-    }
-    100% {
-      font-size: 500%;
-    }
-  }
-  
-  @keyframes initialImageHeight {
-    0% {
-      height: 0px;
-    }
-    100% {
-      height: 145px;
-    }
-  }
-  
-  
-  
-  
-  
-  /* Apply the initial line height animation to the #orbitsText element */
-  #d4lmsText {
-    animation: initialLineHeight 0.3s ease-in-out;
-  }
-  h1 {
-    animation: fontSizeAnimation 0.3s ease-in-out;
-  }
-  
-  #d4lmsText d4lmText {
-    inherits:all;
-    font-family: 'Ubuntu';
-  }
-  
-  /* Other previous CSS rules... */
-  
-  img.round {
-    border-radius: 15px;
-    height: 145px;
-  }
-  
-  img.round {
-    animation: initialImageHeight 0.3s ease-in-out;
-  }
-  
-  
-  img {
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  img:hover {
-    transform: scale(1.2); /* Zoom in by 20% */
-  }
-  
-  
-  
-  .container {
-    margin-left: -20px;
-    margin-right: -20px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    left: 0;
-    right: 0;
+    margin-bottom: var(--spacing-medium);
+    font-weight: 300;
+}
+
+/* 
+ * Heading Container Styling
+ * Custom styling for heading containers
+ */
+.headingContainer {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-  }
+    justify-content: center;
+    margin-bottom: var(--spacing-large);
+}
+
+.headingContainer img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.headingContainer img:hover {
+    transform: scale(1.05);
+}
+
+/* 
+ * Container Styling
+ * Custom styling for containers
+ */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-large);
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.5s ease;
+}
+
+.container img:hover {
+    animation: pulse 1s infinite;
+    transform: scale(1.05);
+    z-index: 10;
+    position: relative;
+}
+
+/* 
+ * Site Navigation Styling
+ * Custom styling for site navigation
+ */
+.site-navigation {
+    background-color: rgba(0,0,0,0.6);
+    padding: var(--spacing-medium);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-navigation ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: var(--spacing-large);
+}
+
+.site-navigation ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.site-navigation ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.site-navigation ul li a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+/* 
+ * Social Media Styling
+ * Custom styling for social media links
+ */
+.social-media {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: var(--spacing-large);
+    margin: var(--spacing-large) 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-large);
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 1.2s;
+    animation-fill-mode: backwards;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+.social-icon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-10px);
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
+}
+
+/* 
+ * Mission Styling
+ * Custom styling for mission section
+ */
+.mission {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: var(--spacing-large);
+    margin: var(--spacing-large) 0;
+}
+
+.mission-content {
+    text-align: center;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-large);
+    margin-top: var(--spacing-large);
+    animation: fadeInUp 1s ease-out 0.7s;
+    animation-fill-mode: backwards;
+}
+
+.mission-item {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: var(--spacing-medium);
+    transition: all 0.3s ease;
+}
+
+.mission-item:hover {
+    animation: float 2s ease-in-out infinite;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.mission-item h3 {
+    margin-bottom: var(--spacing-small);
+    color: var(--secondary-color);
+}
+
+.mission-item p {
+    font-size: var(--font-size-small);
+}
+
+/* 
+ * Footer Styling
+ * Custom styling for footer
+ */
+footer {
+    background-color: rgba(0,0,0,0.7);
+    color: var(--text-color);
+    text-align: center;
+    padding: var(--spacing-medium);
+    margin-top: var(--spacing-large);
+}
+
+/* 
+ * Responsive Design
+ * Custom styling for responsive design
+ */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .site-navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mission-item:hover {
+        animation: none;
+    }
+}
+
+/* 
+ * Keyframe Animations
+ * Define reusable animation sequences
+ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* 
+ * Image Styling
+ * Custom styling for images
+ */
+img {
+    opacity: 1 !important;
+    transition: all 0.3s ease;
+}
+
+/* 
+ * Animation Application
+ * Apply animations to specific elements
+ */
+.hero h1 {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h2 {
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: backwards;
+}
+
+.showcase .container {
+    animation: fadeInUp 1s ease-out 1s;
+    animation-fill-mode: backwards;
+}
