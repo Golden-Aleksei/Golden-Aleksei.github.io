@@ -292,6 +292,55 @@ h2 {
 }
 
 /* 
+ * Showcase Section Styling
+ * Custom styling for showcase section
+ */
+.showcase .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+.showcase figure {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: calc(33.33% - 1rem);
+}
+
+.showcase img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+    aspect-ratio: 4/3;
+}
+
+.showcase figcaption {
+    margin-top: 0.5rem;
+    font-size: var(--font-size-small);
+    color: var(--text-color);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .showcase .container {
+        flex-direction: column;
+    }
+    
+    .showcase figure {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* 
  * Footer Styling
  * Custom styling for footer
  */
@@ -395,4 +444,97 @@ img {
 .showcase .container {
     animation: fadeInUp 1s ease-out 1s;
     animation-fill-mode: backwards;
+}
+
+/* Photo Grid Styling */
+.photo-grid {
+    width: 100%;
+    padding: 2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.grid-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 }

@@ -57,51 +57,67 @@
             <h2>Photos related to the team</h2>
         </section>
 
-        <!-- Photo Gallery Sections -->
-        <section class="project-gallery">
+        <!-- Photo Gallery Section -->
+        <section class="photo-grid">
             <h2>Photo Gallery</h2>
             
-            <!-- Photo Containers -->
-            <div class="container">
-                <img src="photos/41B4D567-7CD3-460B-8D61-A2B646CC9297.webp" class="round animatedImg" alt="A designer showing a sketch of a possible robot." loading="lazy">
-                <img src="photos/IMG.webp" class="round animatedImg" alt="A designer designing a robot." loading="lazy">
-                <img src="photos/IMG_1.webp" class="round animatedImg" alt="A designer showing a sketch of the blocks the competition uses." loading="lazy">
-                <img src="photos/IMG_2.webp" class="round animatedImg" alt="A designer sketching the blocks used in the competition." loading="lazy">
-                <img src="photos/IMG_3.webp" class="round animatedImg" alt="Our programmers learning to code." loading="lazy">
+            <!-- Photo Grid Container -->
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="photos/41B4D567-7CD3-460B-8D61-A2B646CC9297.webp" alt="A designer showing a sketch of a possible robot." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG.webp" alt="A designer designing a robot." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_1.webp" alt="A designer showing a sketch of the blocks the competition uses." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_2.webp" alt="A designer sketching the blocks used in the competition." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_3.webp" alt="Our programmers learning to code." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_4.webp" alt="A photo of one of our robots." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_5.webp" alt="One of our designers talking to another design from another team." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_6.webp" alt="Our supply racks." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_7.webp" alt="Our programmers learning the hardware used." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_8.webp" alt="All of our team working." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_9.webp" alt="Our designers designing one of our robots." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_10.webp" alt="A photo of one of our robots in our design software." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_11.webp" alt="Our designers & builders talking." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_12.webp" alt="A photo of one of the robots in our design software." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_13.webp" alt="One of our designers sketching a robot." loading="lazy">
+                </div>
+                <div class="grid-item">
+                    <img src="photos/IMG_14.webp" alt="Our programmers, designers & builders meeting together & talking with each other." loading="lazy">
+                </div>
             </div>
-            
-            <!-- Additional Photo Containers -->
-            <div class="container">
-                <img src="photos/IMG_4.webp" class="round animatedImg" alt="A photo of one of our robots." loading="lazy">
-                <img src="photos/IMG_5.webp" class="round animatedImg" alt="One of our designers talking to another design from another team." loading="lazy">
-                <img src="photos/IMG_6.webp" class="round animatedImg" alt="Our supply racks." loading="lazy">
-                <img src="photos/IMG_7.webp" class="round animatedImg" alt="Our programmers learning the hardware used." loading="lazy">
-                <img src="photos/IMG_8.webp" class="round animatedImg" alt="All of our team working." loading="lazy">
-            </div>
-            
-            <!-- More Photo Containers -->
-            <div class="container">
-                <img src="photos/IMG_9.webp" class="round animatedImg" alt="Our designers designing one of our robots." loading="lazy">
-                <img src="photos/IMG_10.webp" class="round animatedImg" alt="A photo of one of our robots in our design software." loading="lazy">
-                <img src="photos/IMG_11.webp" class="round animatedImg" alt="Our designers & builders talking." loading="lazy">
-                <img src="photos/IMG_12.webp" class="round animatedImg" alt="A photo of one of the robots in our design software." loading="lazy">
-                <img src="photos/IMG_13.webp" class="round animatedImg" alt="One of our designers sketching a robot." loading="lazy">
-            </div>
-            
-            <!-- Restored Additional Photo Containers -->
-            <div class="container">
-                <img src="photos/IMG_14.webp" class="round animatedImg" alt="Our programmers, designers & builders meeting together & talking with each other." loading="lazy">
-                <img src="photos/IMG_15.webp" class="round animatedImg" alt="A sketch of one of our robots." loading="lazy">
-                <img src="photos/IMG_16.webp" class="round animatedImg" alt="Two of our designers sketching a robot." loading="lazy">
-                <img src="photos/IMG_17.webp" class="round animatedImg" alt="Three of our builders building a robot." loading="lazy">
-                <img src="photos/IMG_18.webp" class="round animatedImg" alt="Two of our designers designing a robot." loading="lazy">
-            </div>
-            <div class="container">
-                <img src="photos/IMG_19.webp" class="round animatedImg" alt="A sketch of one of our robots." loading="lazy">
-                <img src="photos/IMG_20.webp" class="round animatedImg" alt="One of our designers sketching a robot." loading="lazy">
-                <img src="photos/IMG_21.webp" class="round animatedImg" alt="One of our designers designing a robot." loading="lazy">
-                <img src="photos/IMG_22.webp" class="round animatedImg" alt="Two of our designers designing a robot." loading="lazy">
-                <img src="photos/IMG_23.webp" class="round animatedImg" alt="A group photo of our team." loading="lazy">
+
+            <!-- Modal for full-size images -->
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImage">
+                <div id="caption"></div>
             </div>
         </section>
     </main>
@@ -126,5 +142,6 @@
     <footer>
         <p>&copy; 2024 Golden Aleksei Team. All Rights Reserved.</p>
     </footer>
+    <script src="scripts/gallery.js"></script>
 </body>
 </html>
