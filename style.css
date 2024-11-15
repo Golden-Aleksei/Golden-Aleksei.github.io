@@ -449,14 +449,15 @@ img {
 /* Photo Grid Styling */
 .photo-grid {
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
+    width: 100%;
 }
 
 .grid-item {
@@ -465,10 +466,8 @@ img {
     border-radius: 15px;
     cursor: pointer;
     transition: transform 0.3s ease;
-}
-
-.grid-item:hover {
-    transform: scale(1.05);
+    width: 100%;
+    min-height: 200px;
 }
 
 .grid-item img {
@@ -476,6 +475,49 @@ img {
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .grid-item {
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .photo-grid {
+        padding: 0.5rem;
+    }
+    
+    .grid-item {
+        min-height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .grid-item {
+        min-height: 250px;
+    }
+    
+    .photo-grid {
+        padding: 0.25rem;
+    }
 }
 
 /* Modal Styling */
@@ -518,23 +560,4 @@ img {
     text-align: center;
     color: #ccc;
     padding: 10px 0;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
 }
